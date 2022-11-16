@@ -1,18 +1,10 @@
-import { exit } from "process";
-import { Request, Response} from 'express';
+import App from './app';
+import DefaultController from './controller/defaultController';
 
-const express = require('express');
+const app = new App(
+    [
+        new DefaultController(),
+    ],
+);
 
-const app = express();
-
-app.get('/', (req: Request, res: Response) => {
-    res.status(200).end();
-})
-
-app.listen(3000, (err: Error) => {
-    if (!err) {
-        console.log("App listening on port 3000");
-    } else {
-        exit(0)
-    }
-})
+app.listen();
