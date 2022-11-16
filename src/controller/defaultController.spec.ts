@@ -19,7 +19,7 @@ describe('Test Default Controller', () => {
     })
 
     test('GET /', async () => {
-        const expectedStatusCode = 200;
+        const expectedStatusCode = 201;
 
         defaultController.default(mockRequest as Request, mockResponse as Response);
 
